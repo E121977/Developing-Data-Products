@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DDP Project - Word Cloud</title>
+  <meta charset="utf-8">
+  <meta name="description" content="DDP Project - Word Cloud">
+  <meta name="author" content="E121977">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>DDP Project - Word Cloud</h1>
+    <h2>Edgar Allen Poe works analysis</h2>
+    <p>E121977<br/>Slidify Project for Coursera Developing Data Products</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The pupose of this project is to provide a tool that will show the user
+a word cloud text analysis of popular works by Edgar Allen Poe. This may
+seem trival, but could prove to a powerful analysis tool depending on 
+the type and size of the data sources. Large text data files can be
+transformed into visual patterns showing key areas of significance. 
+This technique is utilized daily in many business segments and industries.
+<br>
+<br></p>
+
+<h1><strong>Word Cloud:</strong></h1>
+
+<p><br>
+<strong>&quot;An image composed of words use in a particular text or subject, 
+in which the size of each word indicates the frequency or importance.&quot;</strong> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Methodology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>First we will load a known list of valid books. This can be extened to whatever texts you wish to analyze.</p>
+
+<pre><code class="r"># The list of valid books.
+books &lt;&lt;- list(&quot;The Fall of the House of Usher&quot; = &quot;Usher.txt&quot;,
+              &quot;The Raven&quot; = &quot;Raven.txt&quot;,
+              &quot;The Masque of the Red Death&quot; = &quot;Death.txt&quot;,
+              &quot;The Works of Edgar Allan Poe&quot; = &quot;Works.txt&quot;)
+</code></pre>
+
+<p>The application takes advantage of the <strong>memoise</strong> package. This package allows us to cache resutls for faster processing once the code is run initally. This function will create a Document Term Matrix that the <strong>tm</strong> package uses to determine statistics on the text.</p>
+
+<!--Inside the function we will place the following code that will actually process the text and compute the statistics. -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Shiny</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We now have code that computes some intersting statistics on our text. The next step is to deliver an easy to use  application to our customer who may not have experience with R or may not have any technical expertise. We will use the shiny package to create a web application that wraps an easy to use interface over our code. The user can easily view and adjust the statistics. This approach reqires three basic files: </p>
+
+<ul>
+<li>global.R (our processing code)</li>
+<li>server.R (the code instructions required to build the application)</li>
+<li>ui.R (the code supporting the UI functions of the web application)</li>
+</ul>
+
+<p>The code for the files can be found at: <a href="https://github.com/E121977/DDP-Word-Cloud-Shiny-Application">https://github.com/E121977/DDP-Word-Cloud-Shiny-Application</a> </p>
+
+<p>You can find the application here: <a href="https://e121977kb.shinyapps.io/DDP-Word-Cloud">https://e121977kb.shinyapps.io/DDP-Word-Cloud</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you need to provie insight or actionable information to your organization you can 
+present it in a very usable format thorugh the use of the following tools:
+<br></p>
+
+<ul>
+<li>R: Peform your data science and analytics.</li>
+<li>Shiny: Provide your user interface to provide useful tools to manipulate the data.</li>
+<li>Slidify/Knitr/R Presentation: Provide documentation and presentation of your findings.
+<br>
+<br></li>
+</ul>
+
+<h1>Enjoy the Experience and Share the Shiny Fun!!!</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Methodology'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Shiny'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
